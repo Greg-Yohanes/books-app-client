@@ -3,7 +3,7 @@
 var app = app || {};
 
 (function(module) {
-  var __API_URL__ = 'http://localhost:3000';
+  var __API_URL__ = 'https://localhost:3000';
   // var __API_URL__ = 'https://gn-yd-booklist.herokuapp.com/';
 
   function errorCallBack(err) {
