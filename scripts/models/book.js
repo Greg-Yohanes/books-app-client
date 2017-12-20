@@ -8,7 +8,7 @@ var app = app || {};
 
   function errorCallBack(err) {
     console.error(err)
-    module.errorView.initErrorPage(err)
+    module.errorView.initErrorView(err)
   }
 
   function Book(rawBookObj) {
