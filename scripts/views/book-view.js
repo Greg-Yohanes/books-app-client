@@ -14,12 +14,13 @@ var app = app || {};
   bookView.initDetailPage = function() {
     $('.container').hide()
     $('.detail-view').show()
+    $('#detail-desc').empty()
     module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-detail-template')));
   }
 
   module.bookView = bookView
 })(app)
 
-$(function() {
-  app.Book.fetchAll(app.bookView.initIndexView)
-}) //$means jquery version of DOcument.ready
+// $(function() {
+//   app.Book.fetchAll(app.bookView.initIndexView)
+// }) //$means jquery version of DOcument.ready
