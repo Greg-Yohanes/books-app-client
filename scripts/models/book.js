@@ -29,7 +29,7 @@ var app = app || {};
   $.get(`${__API_URL__}/api/v1/books/${id}`)
   .then(Book.loadAll)
   .then(callback)
-  .catch(errorCallback)
+  .catch(errorCallBack)
   // Book.fetchOne = callback =>
   //   $.get(`${__API_URL__`)
 
