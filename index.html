@@ -23,6 +23,7 @@
         <div>
           <h3>{{title}}</h2>
           <p>{{author}}</p>
+          <button type="button" id = bookid-"{{book_id}}"><a href="/books/{{book_id}}"></a>view details</button>
         </div>
       </div>
     </li>
@@ -30,13 +31,11 @@
   <script type="text/x-handlebars-template" id="book-list-template">
         <div class="book-container">
           <p>{{isbn}}</p>
-        <img src={{image_url}}>
-        <div>
+          <img src={{image_url}}>
           <h3>{{title}}</h2>
           <p>{{author}}</p>
           <p>{{description}}</p>
-        </div>
-      </div>
+         </div>
     </li>
   </script>
 </head>
@@ -91,6 +90,7 @@
     </aside>
   </footer>
   <!-- External CDN Resources -->
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
