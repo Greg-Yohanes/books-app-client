@@ -3,8 +3,8 @@
 var app = app || {};
 
 (function(module) {
-  // var __API_URL__ = 'https://localhost:3000';
-  var __API_URL__ = 'https://gn-yd-booklist.herokuapp.com';
+  var __API_URL__ = 'http://localhost:3000';
+  // var __API_URL__ = 'https://gn-yd-booklist.herokuapp.com';
 
   function errorCallBack(err) {
     console.error(err)
@@ -16,7 +16,7 @@ var app = app || {};
   }
 
   Book.prototype.toHtml = function(templateId) {
-    let template = Handlebars.compile($(`#${templateiD}`).text())
+    let template = Handlebars.compile($(`#${templateId}`).text())
     return template(this);
     // return Handlebars.compile($(`#${templateId}`).text())(this)
   }
@@ -29,7 +29,7 @@ var app = app || {};
   $.get(`${__API_URL__}/api/v1/books/${id}`)
   .then(Book.loadAll)
   .then(callback)
-  .catch(errorCallback)
+  .catch(errorCallBack)
   // Book.fetchOne = callback =>
   //   $.get(`${__API_URL__`)
 

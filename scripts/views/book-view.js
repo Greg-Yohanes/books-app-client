@@ -15,7 +15,9 @@ var app = app || {};
     $('.container').hide()
     $('.detail-view').show()
     $('#detail-desc').empty()
-    module.Book.all.map(book => $('#detail-desc').append(book.toHtml('book-detail-template')));
+    module.Book.all.map(book => {
+      console.log(book);
+      $('#detail-desc').append(book.toHtml('book-detail-template'))});
   }
 
   module.bookView = bookView
