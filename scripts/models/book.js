@@ -12,22 +12,32 @@ var app = app || {};
   }
 
   function Book(rawBookObj) {
-    Object.keys(rawBookObj).map(key => this[key] = rawBookObj[key])
+    Object.keys(rawBookObj).map(key => this[key] = rawBookObj[key]);
   }
 
-  Book.prototype.toHtml = function() {
-    // let template = Handlebars.compile($('#book-list-template').text())
-    // return template(this)
-    return Handlebars.compile($('#book-list-template').text())(this)
+  Book.prototype.toHtml = function(templateId) {
+    let template = Handlebars.compile($(`#${templateiD}`).text())
+    return template(this);
+    // return Handlebars.compile($(`#${templateId}`).text())(this)
   }
 
-  Book.all = []
-  Book.loadAll = rows => Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book))
+  Book.all = [];
+
+  Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
+
+  Book.fetchOne = (id, callback) =>
+  $.get(`${__API_URL__}/api/v1/books/${id}`)
+  .then(Book.loadAll)
+  .then(callback)
+  .catch(errorCallback)
+  // Book.fetchOne = callback =>
+  //   $.get(`${__API_URL__`)
+
   Book.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/books`)
     .then(Book.loadAll)
     .then(callback)
     .catch(errorCallBack)
 
-  module.Book = Book
+  module.Book = Book;
 })(app)
