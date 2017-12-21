@@ -17,17 +17,22 @@ var app = app || {};
 
   Book.prototype.toHtml = function() {
     // let template = Handlebars.compile($('#book-list-template').text())
-    // return template(this)
+    // return template(this) -- more longhanded version ov below
     return Handlebars.compile($('#book-list-template').text())(this)
   }
 
-  Book.all = []
+  Book.all = [];
+
   Book.loadAll = rows => Book.all = rows.sort((a, b) => a.title - b.title).map(book => new Book(book))
+
+  // Book.fetchOne = callback =>
+  //   $.get(`${__API_URL__`)
+
   Book.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/books`)
     .then(Book.loadAll)
     .then(callback)
     .catch(errorCallBack)
 
-  module.Book = Book
+  module.Book = Book;
 })(app)
