@@ -10,7 +10,26 @@
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
 
-  <!-- Application Templates -->
+  <section class="container" id="one">
+    <h1>Enter New Book</h1>
+    <section id="write" class="tab-content">
+        <form action="#" id="new-form">
+          <label>
+            <input type="text" id="article-title" placeholder="Article title" required>
+          </label>
+          <label>
+            <input type="text" id="article-author" placeholder="Author Name" required>
+          </label>
+          <label>
+            <input type="text" id="article-category" placeholder="Category" required>
+          </label>
+          <textarea id="article-body" rows="8" cols="40" required></textarea>
+          <label>
+            <input type="text" id="article-author-url" placeholder="Author's URL" required>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+  </section>
   <script type="text/x-handlebars-template" id="error-template">
     <h3>Oops, something went wrong!</h3>
     <p>{{status}}: {{statusText}}</p>
