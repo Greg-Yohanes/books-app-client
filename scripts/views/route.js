@@ -2,11 +2,11 @@
 
 page('/', () => app.Book.fetchAll(app.bookView.initIndexView))
 
+page('/books/new', app.bookView.initNewBook)
+
 page('/books/:id', ctx => {
   console.log(ctx);
   app.Book.fetchOne(ctx.params.id, app.bookView.initDetailPage)})
-
-page('/newbook', app.bookView.initNewBook)
 
 page() //call back for the a'bove code
 
