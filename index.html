@@ -10,6 +10,55 @@
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
 
+  <script type="text/x-handlebars-template" id="error-template">
+    <h3>Oops, something went wrong!</h3>
+    <p>{{status}}: {{statusText}}</p>
+  </script>
+
+  <script type="text/x-handlebars-template" id="book-list-template">
+    <li class="book-item" data-bookid={{book_id}}>
+      <div class="book-container">
+        <img src={{image_url}}>
+        <div>
+          <h3>{{title}}</h2>
+          <p>{{author}}</p>
+          <button type="button" id = "bookid-{{book_id}}"><a href="/books/{{book_id}}">view details</a></button>
+        </div>
+      </div>
+    </li>
+  </script>
+
+  <!-- the following script updated and complete. Havent linked it to js files yet -->
+  <script type="text/x-handlebars-template" id="book-detail-template">
+    <div class="book-item" data-bookid={{book_id}}>  <!-- added div class -->
+      <div class="book-container">
+        <p>{{isbn}}</p>
+        <img src={{image_url}}>
+        <h3>{{title}}</h2>
+        <p>{{author}}</p>
+        <p>{{description}}</p>
+      </div>
+    </div>
+  </script>
+</head>
+<body>
+  <!-- Moved header to correct area (before all other content in body) -->
+  <header>
+      <div class="header-content">
+        <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo" class="shield"></a>
+        <h1 class="nav-h1">BOOKS</h1>
+        <nav class="main-nav">
+          <label for="show-nav" class="show-nav"> <img class="hamburger" src="assets/Hamburger_icon.svg.png"></label>
+        <input type = "checkbox" id="show-nav">
+          <ul class="menu">
+            <li class="tab"><a href="/">All Books</a></li>
+            <li class="tab"><a href="/newbook">New Book</a></li>
+      </div>
+    </header>
+  <!-- Moved header to correct area (before all other content in body). Added hamburger menu content -->
+
+
+  
   <!-- <section class="container" id="one">
     <h1>Enter New Book</h1>
     <section id="write" class="tab-content">
@@ -53,34 +102,6 @@
       </label>
     </form>
   </section>
-  <script type="text/x-handlebars-template" id="error-template">
-    <h3>Oops, something went wrong!</h3>
-    <p>{{status}}: {{statusText}}</p>
-  </script>
-
-  <script type="text/x-handlebars-template" id="book-list-template">
-    <li class="book-item" data-bookid={{book_id}}>
-      <div class="book-container">
-        <img src={{image_url}}>
-        <div>
-          <h3>{{title}}</h2>
-          <p>{{author}}</p>
-          <button type="button" id = "bookid-{{book_id}}"><a href="/books/{{book_id}}">view details</a></button>
-        </div>
-      </div>
-    </li>
-  </script>
-  <script type="text/x-handlebars-template" id="book-detail-template">
-        <div class="book-container">
-          <p>{{isbn}}</p>
-          <img src={{image_url}}>
-          <h3>{{title}}</h2>
-          <p>{{author}}</p>
-          <p>{{description}}</p>
-         </div>
-    </script>
-</head>
-<body>
 
   <!-- inputing nav bar -->
 
@@ -96,12 +117,7 @@
   </nav>
 
 <!-- inputing nav bar -->
-  <header>
-    <div class="header-content">
-      <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
-      <h1>Code Fellows Books</h1>
-    </div>
-  </header>
+
   <main>
 
     <section class="error-view container">
