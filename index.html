@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
 
-  <section class="container" id="one">
+  <!-- <section class="container" id="one">
     <h1>Enter New Book</h1>
     <section id="write" class="tab-content">
         <form action="#" id="new-form">
@@ -29,6 +29,29 @@
           </label>
           <button type="submit">Submit</button>
         </form>
+  </section> -->
+
+  <section id="form-view" class="container">
+    <form id="new-book-form">
+      <label>
+        <input name="title" type="text" placeholder="Title" required>
+      </label>
+      <label>
+        <input name="author" type="text" placeholder="Author" required>
+      </label>
+      <label>
+        <input name="isbn" type="text" placeholder="isbn" required>
+      </label>
+      <label>
+        <input name="image_url" type="url" placeholder="Image URL" required>
+      </label>
+      <label>
+        <textarea name="description" placeholder="Description" required></textarea>
+      </label>
+      <label>
+        <button id="new-book-submit" class="primary-btn" type="submit">Add Book</button>
+      </label>
+    </form>
   </section>
   <script type="text/x-handlebars-template" id="error-template">
     <h3>Oops, something went wrong!</h3>
