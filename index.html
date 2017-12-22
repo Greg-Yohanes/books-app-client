@@ -50,15 +50,27 @@
         <nav class="main-nav">
           <label for="show-nav" class="show-nav"> <img class="hamburger" src="assets/Hamburger_icon.svg.png"></label>
         <input type = "checkbox" id="show-nav">
-          <ul class="menu">
-            <li class="tab"><a href="/">All Books</a></li>
-            <li class="tab"><a href="/newbook">New Book</a></li>
+          <ul class="menu-list">
+            <li class="tab-1"><a href="/">All Books</a></li>
+            <li class="tab-2"><a href="/books/new">Add a New Book</a></li>
       </div>
     </header>
+ <!-- The nav bar below i moved up starting at line 53 with <ul> tag
+    <nav>
+        <div class="icon-menu"></div>
+          <ul id="menu-list">
+            <li class="link-1"><a href="/">View All Books</a></li>
+            <li class="link-2"><a href="/books/new">Add A New Book</a></li>
+           <li><a href="/search">Search</a></li>
+            <li><a href="/admin">Admin Login</a></li> 
+          </ul>
+        </div>
+      </nav> -->
+
   <!-- Moved header to correct area (before all other content in body). Added hamburger menu content -->
 
 
-  
+
   <!-- <section class="container" id="one">
     <h1>Enter New Book</h1>
     <section id="write" class="tab-content">
@@ -80,10 +92,13 @@
         </form>
   </section> -->
 
+    <!-- entire form below has been rendered in book-view.js line 34-36, CORRECTLY -->
+
   <section id="form-view" class="container">
-    <form id="new-book-form">
+    <h1>Enter New Book</h1>
+    <form action="#" id="new-book-form">
       <label>
-        <input name="title" type="text" id="title" placeholder="Title" required>
+        <input name="title" type="text" id="article-title" placeholder="Title" required>
       </label>
       <label>
         <input name="author" type="text" id="article-author" placeholder="Author" required>
@@ -102,21 +117,9 @@
       </label>
     </form>
   </section>
+  <!-- entire form rendered in book-view.js line 34-36, CORRECTLY -->
 
-  <!-- inputing nav bar -->
-
-  <nav>
-    <div class="icon-menu"></div>
-      <ul id="menu-list">
-        <li class="link-1"><a href="/">View All Books</a></li>
-        <li class="link-2"><a href="/books/new">Add A New Book</a></li>
-        <!-- <li><a href="/search">Search</a></li>
-        <li><a href="/admin">Admin Login</a></li> -->
-      </ul>
-    </div>
-  </nav>
-
-<!-- inputing nav bar -->
+<!-- moved nav bar to header which used to be here -->
 
   <main>
 
