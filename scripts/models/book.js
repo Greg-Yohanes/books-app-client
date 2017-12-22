@@ -39,5 +39,12 @@ var app = app || {};
     .then(callback)
     .catch(errorCallBack)
 
+  
+  Book.prototype.insertRecord = function(callback) {
+    $.post(`${__API_URL__}`, {author: this.author, image_url: this.image_url, body: this.description, isbn: this.isbn, title: this.title})
+   .then(console.log)
+   .then(callback);
+};
+
   module.Book = Book;
 })(app)
