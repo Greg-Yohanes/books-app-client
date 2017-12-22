@@ -10,6 +10,67 @@
   <link rel="stylesheet" href="./styles/layout.css">
   <link rel="stylesheet" href="./styles/modules.css">
 
+  <script type="text/x-handlebars-template" id="error-template">
+    <h3>Oops, something went wrong!</h3>
+    <p>{{status}}: {{statusText}}</p>
+  </script>
+
+  <script type="text/x-handlebars-template" id="book-list-template">
+    <li class="book-item" data-bookid={{book_id}}>
+      <div class="book-container">
+        <img src={{image_url}}>
+        <div>
+          <h3>{{title}}</h2>
+          <p>{{author}}</p>
+          <button type="button" id = "bookid-{{book_id}}"><a href="/books/{{book_id}}">view details</a></button>
+        </div>
+      </div>
+    </li>
+  </script>
+
+  <!-- the following script updated and complete. Havent linked it to js files yet -->
+  <script type="text/x-handlebars-template" id="book-detail-template">
+    <div class="book-item" data-bookid={{book_id}}>  <!-- added div class -->
+      <div class="book-container">
+        <p>{{isbn}}</p>
+        <img src={{image_url}}>
+        <h3>{{title}}</h2>
+        <p>{{author}}</p>
+        <p>{{description}}</p>
+      </div>
+    </div>
+  </script>
+</head>
+<body>
+  <!-- Moved header to correct area (before all other content in body) -->
+  <header>
+      <div class="header-content">
+        <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo" class="shield"></a>
+        <h1 class="nav-h1">BOOKS</h1>
+        <nav class="main-nav">
+          <label for="show-nav" class="show-nav"> <img class="hamburger" src="assets/Hamburger_icon.svg.png"></label>
+        <input type = "checkbox" id="show-nav">
+          <ul class="menu-list">
+            <li class="tab-1"><a href="/">All Books</a></li>
+            <li class="tab-2"><a href="/books/new">Add a New Book</a></li>
+      </div>
+    </header>
+ <!-- The nav bar below i moved up starting at line 53 with <ul> tag
+    <nav>
+        <div class="icon-menu"></div>
+          <ul id="menu-list">
+            <li class="link-1"><a href="/">View All Books</a></li>
+            <li class="link-2"><a href="/books/new">Add A New Book</a></li>
+           <li><a href="/search">Search</a></li>
+            <li><a href="/admin">Admin Login</a></li> 
+          </ul>
+        </div>
+      </nav> -->
+
+  <!-- Moved header to correct area (before all other content in body). Added hamburger menu content -->
+
+
+
   <!-- <section class="container" id="one">
     <h1>Enter New Book</h1>
     <section id="write" class="tab-content">
@@ -31,10 +92,13 @@
         </form>
   </section> -->
 
+    <!-- entire form below has been rendered in book-view.js line 34-36, CORRECTLY -->
+
   <section id="form-view" class="container">
-    <form id="new-book-form">
+    <h1>Enter New Book</h1>
+    <form action="#" id="new-book-form">
       <label>
-        <input name="title" type="text" id="title" placeholder="Title" required>
+        <input name="title" type="text" id="article-title" placeholder="Title" required>
       </label>
       <label>
         <input name="author" type="text" id="article-author" placeholder="Author" required>
@@ -53,55 +117,10 @@
       </label>
     </form>
   </section>
-  <script type="text/x-handlebars-template" id="error-template">
-    <h3>Oops, something went wrong!</h3>
-    <p>{{status}}: {{statusText}}</p>
-  </script>
+  <!-- entire form rendered in book-view.js line 34-36, CORRECTLY -->
 
-  <script type="text/x-handlebars-template" id="book-list-template">
-    <li class="book-item" data-bookid={{book_id}}>
-      <div class="book-container">
-        <img src={{image_url}}>
-        <div>
-          <h3>{{title}}</h2>
-          <p>{{author}}</p>
-          <button type="button" id = "bookid-{{book_id}}"><a href="/books/{{book_id}}">view details</a></button>
-        </div>
-      </div>
-    </li>
-  </script>
-  <script type="text/x-handlebars-template" id="book-detail-template">
-        <div class="book-container">
-          <p>{{isbn}}</p>
-          <img src={{image_url}}>
-          <h3>{{title}}</h2>
-          <p>{{author}}</p>
-          <p>{{description}}</p>
-         </div>
-    </script>
-</head>
-<body>
+<!-- moved nav bar to header which used to be here -->
 
-  <!-- inputing nav bar -->
-
-  <nav>
-    <div class="icon-menu"></div>
-      <ul id="menu-list">
-        <li class="link-1"><a href="/">View All Books</a></li>
-        <li class="link-2"><a href="/books/new">Add A New Book</a></li>
-        <!-- <li><a href="/search">Search</a></li>
-        <li><a href="/admin">Admin Login</a></li> -->
-      </ul>
-    </div>
-  </nav>
-
-<!-- inputing nav bar -->
-  <header>
-    <div class="header-content">
-      <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
-      <h1>Code Fellows Books</h1>
-    </div>
-  </header>
   <main>
 
     <section class="error-view container">

@@ -7,6 +7,7 @@ var app = app || {};
 
   bookView.initIndexView = function () {
     $('.container').hide()
+    $('#book-list').empy() //added this line of code
     $('.book-view').show()
     module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')))
   }
@@ -28,6 +29,8 @@ var app = app || {};
       $('#detail-desc').append(book.toHtml('book-detail-template'))});      
   }
 
+
+
   bookView.create = function () {
     var book;
     $('#book-list').empty()
@@ -39,8 +42,9 @@ var app = app || {};
       description: $('#article-body').val(),
     });
     console.log('current book: ', book)
-    $('#book-list').append(book.toHtml('book-list-template'));
+    $('#book-list').append(book.toHtml('#book-list-template'));
    };
+//EVERYTHING FROM THIS LINE ABOVE IS CORRECTLY RENDERED TO HTML
 
   bookView.submit = event => {
     event.preventDefault();
@@ -62,4 +66,4 @@ var app = app || {};
 
 $(function() {
   app.Book.fetchAll(app.bookView.initIndexView)
-}) //$means jquery version of DOcument.ready
+}) //$means jquery version of DOcument.ready. Not sure if we need this code or not
