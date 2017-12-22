@@ -12,10 +12,11 @@ var app = app || {};
   }
 
   bookView.initNewBook = function() {
+    resetView();
     $('.container').hide()
-    $('#one').show()
-    $('#new-form').on('change', 'input, textarea', bookView.create);
-    $('#new-form').on('submit', bookView.submit);
+    $('#form-view').show()
+    $('#new-book-form').on('change', 'input, textarea', bookView.create);
+    $('#new-book-form').on('submit', bookView.submit);
   }
 
   bookView.initDetailPage = function() {
@@ -59,6 +60,6 @@ var app = app || {};
   module.bookView = bookView
 })(app)
 
-// $(function() {
-//   app.Book.fetchAll(app.bookView.initIndexView)
-// }) //$means jquery version of DOcument.ready
+$(function() {
+  app.Book.fetchAll(app.bookView.initIndexView)
+}) //$means jquery version of DOcument.ready
