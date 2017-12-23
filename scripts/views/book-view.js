@@ -7,16 +7,15 @@ var app = app || {};
 
   bookView.initIndexView = function () {
     $('.container').hide()
-    $('#book-list').empy() //added this line of code
+    $('#book-list').empty() //added this line of code
     $('.book-view').show()
     module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')))
   }
 
   bookView.initNewBook = function() {
-    resetView();
     $('.container').hide()
     $('#form-view').show()
-    $('#new-book-form').on('change', 'input, textarea', bookView.create);
+    // $('#new-book-form').on('change', 'input, textarea', bookView.create);
     $('#new-book-form').on('submit', bookView.submit);
   }
 
