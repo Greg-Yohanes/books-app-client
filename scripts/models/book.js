@@ -36,7 +36,7 @@ var app = app || {};
   Book.fetchAll = callback =>
     $.get(`${__API_URL__}/api/v1/books`)
     .then(Book.loadAll)
-    .then(callback)
+    .then(callback) 
     .catch(errorCallBack)
 
   

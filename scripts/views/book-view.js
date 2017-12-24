@@ -7,16 +7,15 @@ var app = app || {};
 
   bookView.initIndexView = function () {
     $('.container').hide()
-    $('#book-list').empy() //added this line of code
+    $('#book-list').empty() //added this line of code
     $('.book-view').show()
     module.Book.all.map(book => $('#book-list').append(book.toHtml('book-list-template')))
   }
 
   bookView.initNewBook = function() {
-    resetView();
     $('.container').hide()
     $('#form-view').show()
-    $('#new-book-form').on('change', 'input, textarea', bookView.create);
+    // $('#new-book-form').on('change', 'input, textarea', bookView.create);
     $('#new-book-form').on('submit', bookView.submit);
   }
 
@@ -58,7 +57,7 @@ var app = app || {};
     console.log('book', book);
     book.insertRecord();
    
-    window.location = '/';
+    window.location = 'http://127.0.0.1:8080/books-app-client/';
   }
 
   module.bookView = bookView
