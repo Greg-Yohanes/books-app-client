@@ -57,7 +57,7 @@ var app = app || {};
     console.log('book', book);
     book.insertRecord();
    
-    window.location = '/';
+    window.location = 'http://127.0.0.1:8080/books-app-client/';
   }
 
   module.bookView = bookView
